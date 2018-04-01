@@ -1,0 +1,31 @@
+mongodb-master:
+  hostname: mongodb-master
+  image: mongo
+  # volumes:
+  #   - ./data/mongodb-master:/data/db
+  ports:
+    - "27017:27017"
+    - "28017:28017"
+
+# mongo-seed:
+#   build: ./mongo-seed
+#   links:
+#     - mongodb-master
+
+mysql:
+  build: ./mysql-seed
+  environment:
+    MYSQL_DATABASE: "testsql"
+    MYSQL_USER: "test"
+    MYSQL_ROOT_PASSWORD: "test"
+  command: --init-file /tmp/create-mysql-db.sql
+  ports:
+    - "3306:3306"
+
+web:
+  build: .
+  ports:
+    - "3000:3000"
+  links:
+    - mongodb-master
+    - mysql

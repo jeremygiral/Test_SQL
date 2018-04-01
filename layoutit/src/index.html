@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Bootstrap 4, from LayoutIt!</title>
+
+	<meta name="description" content="Source code generated using layoutit.com">
+	<meta name="author" content="LayoutIt!">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-8">
+							<h3>
+								Question 1/12 - SQL
+							</h3>
+						</div>
+						<div class="col-md-4">
+							<p>Temps écoulé : <strong id="timer"></strong>/ 00:50</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<img alt="Bootstrap Image Preview" src="http://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+							<p>
+								Ici les consignes
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h2>
+								Résultat Console
+							</h2>
+							<div class="col-md-12">
+								<p>
+									Ici le résultats de la console SQL
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-10">
+							<h3>
+								Ici on compose le code
+							</h3>
+						</div>
+						<div class="col-md-2">
+
+							<button type="button" class="btn btn-success">
+								Bouton reinitilisation
+							</button>
+						</div>
+					</div>
+					<form role="form">
+						<div class="form-group">
+							<textarea class="form-control" rows="10"></textarea>
+						</div>
+					</form>
+					<div class="row">
+						<div class="col-md-5">
+
+							<button type="button" class="btn btn-success">
+								Tester le code
+							</button>
+						</div>
+						<div class="col-md-2">
+
+							<button type="button" class="btn btn-success">
+								Info
+							</button>
+						</div>
+						<div class="col-md-5">
+
+							<button type="button" class="btn btn-success">
+								Envoyer le code
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+var seconds = 50;
+function secondPassed() {
+    var minutes = Math.round((seconds-30)/60);
+    var remainingSeconds = seconds % 60;
+    if(minutes < 10){
+        minutes = "0" + minutes;
+    }
+    if(remainingSeconds < 10){
+        remainingSeconds = "0" + remainingSeconds;
+       }
+    document.getElementById("timer").innerHTML=minutes+":"+remainingSeconds;
+    if(seconds == 0 ){
+        clearInterval(countdownTimer);
+        document.getElementById("timer").innerHTML="Fini";
+    }else{
+        seconds --;
+    }
+}
+var countdownTimer=setInterval(secondPassed,1000);
+</script>
+</body>
+</html>

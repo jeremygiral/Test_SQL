@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-8">
+            <h3>
+              Question 1/12 - SQL
+            </h3>
+          </div>
+          <div class="col-md-4">
+            <p>Temps écoulé : <strong id="timer"></strong>/ 00:50</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img alt="Bootstrap Image Preview" src="http://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+            <p>
+              Ici les consignes
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>
+              Résultat Console
+            </h2>
+            <div class="col-md-12">
+              <table>
+                <tr>
+                {{#each champs}}
+                <th>{{this}}</th>
+                {{/each}}
+                </tr>
+                {{#each valeurs}}
+                <tr>
+                  {{#each this}}
+                  <td>{{this}}</td>
+                  {{/each}}
+                </tr>
+                {{/each}}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-10">
+            <h3>
+              Ici on compose le code
+            </h3>
+          </div>
+          <div class="col-md-2 ">
+
+            <button type="button" class="btn btn-success">
+              <img src="/images/reload.png" width="20" />
+            </button>
+          </div>
+        </div>
+        <form action="/" method="post">
+          <div class="form-group">
+            <label for="code">Editor</label>
+            <div id="editor">SELECT * FROM TABLE;</div>
+            <textarea id="codehidden" name="codehidden" style="display: none;" ></textarea>
+          </div>
+
+        <div class="row">
+          <div class="col-md-5">
+                <!-- <button type="button" class="btn btn-success" style="width: 100%;">Tester le code</button> -->
+                <input type="submit" class="btn btn-success" id="testBtn" style="width: 100%;" value="Tester le code">
+          </div>
+          <div class="col-md-2">
+
+            <button type="button" class="btn btn-success" style="width: 100%;">
+              Info
+            </button>
+          </div>
+          <div class="col-md-5">
+
+            <button type="button" class="btn btn-success" style="width: 100%;">
+              Envoyer le code
+            </button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "site-bial-x",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "express-handlebars": "^3.0.0",
+    "hbs": "~4.0.1",
+    "mongoose": "^5.0.12",
+    "morgan": "~1.9.0",
+    "mysql": "github:mysqljs/mysql",
+    "nodemon": "^1.17.2",
+    "passport": "^0.4.0",
+    "prismjs": "^1.13.0",
+    "serve-favicon": "~2.4.5"
+  }
+}

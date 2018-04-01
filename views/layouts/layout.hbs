@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Test de compétence SQL</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="Bial-X">
+
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+  </head>
+  <body>
+    {{{body}}}
+    <script src="/javascripts/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/javascript");
+
+      var button = document.getElementById("testBtn");
+      button.onclick = function(){
+        document.getElementById('codehidden').value = editor.getSession().getValue();
+      }
+  </script>
+    <script src="/javascripts/jquery.min.js"></script>
+  	<script src="/javascripts/bootstrap.min.js"></script>
+  	<script src="/javascripts/scripts.js"></script>
+  	<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/sql");
+  var seconds = 50;
+  function secondPassed() {
+      var minutes = Math.round((seconds-30)/60);
+      var remainingSeconds = seconds % 60;
+      if(minutes < 10){
+          minutes = "0" + minutes;
+      }
+      if(remainingSeconds < 10){
+          remainingSeconds = "0" + remainingSeconds;
+         }
+      document.getElementById("timer").innerHTML=minutes+":"+remainingSeconds;
+      if(seconds == 0 ){
+          clearInterval(countdownTimer);
+          document.getElementById("timer").innerHTML="Fini";
+      }else{
+          seconds --;
+      }
+  }
+  var countdownTimer=setInterval(secondPassed,1000);
+  </script>
+  </body>
+</html>
